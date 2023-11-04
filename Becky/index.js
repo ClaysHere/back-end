@@ -43,7 +43,7 @@ app.get('/products/tambah', (req, res) => {
   insertData();
 });
 
-app.get('/products', async (req, res) => {
+app.get('/products', (req, res) => {
   async function findData() {
     try {
       const findResult = await collection.find({}).toArray();
@@ -55,7 +55,7 @@ app.get('/products', async (req, res) => {
   findData();
 });
 
-app.get('/products/delete/:id', async (req, res) => {
+app.get('/products/delete/:id', (req, res) => {
   const id = new ObjectId(req.params.id);
 
   async function deleteData() {
